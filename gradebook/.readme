@@ -1,1 +1,9 @@
 This project is a functional gradebook that allows numerous users to create student accounts, sign up for classes, submit assignments, and know their grades for each class.
+To do this, I use an SQL database and the PDO module and display understanding in relational databases andhow to make database calls in a sever-side language (PHP).
+The user first starts at a login page, where they are prompted to either log into an existing account or create a new account. User data is stored within an SQL table, where each 
+user has a unique user - or in this case "student"- id. This student id primary key in the students table relates to the student_id foreign key in the classes table, relating individual classes to each student. 
+
+One way I could improve my code is that it currently uses a many-to-one database relationship between the students and classes, meaning that one student could have many classes. However,
+this means that for every person in a given class, a new "class" row will be stored in the SQL table. Ideally, a many-to-many relationship between classes to students would allow both a class to have 
+many students to reduce total data storage. In terms of relating grading columns to classes and assignments to grading columns, I assume that any given class could be graded in many different ways, thus justifying the usage
+of a many-to-one relational database.
